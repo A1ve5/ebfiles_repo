@@ -1,0 +1,52 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-05_22-20-19
+easyblock = 'ConfigureMake'
+
+name = 'M4'
+version = '1.4.17'
+
+homepage = 'http://www.gnu.org/software/m4/m4.html'
+description = """GNU M4 is an implementation of the traditional Unix macro processor.
+ It is mostly SVR4 compatible although it has some extensions 
+ (for example, handling more than 9 positional parameters to macros).
+ GNU M4 also has built-in functions for including files, running shell commands, doing arithmetic, etc.
+"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+sources = [SOURCELOWER_TAR_GZ]
+source_urls = [GNU_SOURCE]
+
+configopts = "--enable-cxx CPPFLAGS=-fgnu89-inline"
+
+sanity_check_paths = {
+    'files': ["bin/m4"],
+    'dirs': [],
+}
+
+moduleclass = 'devel'
+
+# Build statistics
+buildstats = [{
+    "build_time": 33.89,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", '--force', "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/cvmfs/fgi.csc.fi'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/cvmfs/fgi.csc.fi/software/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/fgci'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", 'M4-1.4.17.eb', 'flex-2.5.39.eb', 'Bison-3.0.4.eb', 'zlib-1.2.8.eb', 'binutils-2.25.eb', 'GCC-4.9.3-binutils-2.25.eb', 'flex-2.5.39-GCC-4.9.3-binutils-2.25.eb', 'zlib-1.2.8-GCC-4.9.3-binutils-2.25.eb', 'M4-1.4.17-GCC-4.9.3-binutils-2.25.eb', 'Bison-3.0.4-GCC-4.9.3-binutils-2.25.eb', 'binutils-2.25-GCC-4.9.3-binutils-2.25.eb', 'GNU-4.9.3-2.25.eb', 'OpenBLAS-0.2.14-GNU-4.9.3-2.25-LAPACK-3.5.0.eb', 'M4-1.4.17-GNU-4.9.3-2.25.eb', 'Autoconf-2.69-GNU-4.9.3-2.25.eb', 'Automake-1.15-GNU-4.9.3-2.25.eb', 'libtool-2.4.6-GNU-4.9.3-2.25.eb', 'Autotools-20150215-GNU-4.9.3-2.25.eb', 'numactl-2.0.10-GNU-4.9.3-2.25.eb', 'hwloc-1.11.0-GNU-4.9.3-2.25.eb', 'OpenMPI-1.8.8-GNU-4.9.3-2.25.eb', 'gompi-2015b.eb', 'FFTW-3.3.4-gompi-2015b.eb', 'ScaLAPACK-2.0.2-gompi-2015b-OpenBLAS-0.2.14-LAPACK-3.5.0.eb', 'foss-2015b.eb', 'bzip2-1.0.6-foss-2015b.eb', 'zlib-1.2.8-foss-2015b.eb', 'ncurses-5.9-foss-2015b.eb', 'Boost-1.60.0-foss-2015b.eb', 'CMake-3.4.1-foss-2015b.eb', 'libxml2-2.9.2-foss-2015b.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/lto-wrapper; Target: x86_64-redhat-linux; Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux; Thread model: posix; gcc version 4.8.5 20150623 (Red Hat 4.8.5-4) (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 1096182,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/bin/gcc",
+    "system_python_path": "/bin/python",
+    "timestamp": 1475695219,
+    "total_memory": 257676,
+}]

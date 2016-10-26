@@ -1,0 +1,34 @@
+--- customize.py.orig	2016-06-20 15:55:04.000000000 +0200
++++ customize.py	2016-10-12 15:55:25.020161373 +0200
+@@ -28,6 +28,12 @@
+     libraries += ['somelib', 'otherlib']
+ """
+ 
++import os
++# Force library dirs and specific libraries
++library_dirs = os.getenv('LD_LIBRARY_PATH').split(':')
++libraries = ['xc', 'openblas']
++mpi_libraries += ['gfortran', 'scalapack', 'mpi']
++
+ # compiler = 'gcc'
+ # mpicompiler = 'mpicc'  # use None if you don't want to build a gpaw-python
+ # mpilinker = 'mpicc'
+@@ -36,12 +42,15 @@
+ # hdf5 = False
+ 
+ # Use ScaLAPACK:
++scalapack = True
++
++# Use ScaLAPACK:
+ # Warning! At least scalapack 2.0.1 is required!
+ # See https://trac.fysik.dtu.dk/projects/gpaw/ticket/230
+ if scalapack:
+-    libraries += ['scalapack-openmpi',
+-                  'blacsCinit-openmpi',
+-                  'blacs-openmpi']
++#    libraries += ['scalapack-openmpi',
++#                  'blacsCinit-openmpi',
++#                  'blacs-openmpi']
+     define_macros += [('GPAW_NO_UNDERSCORE_CBLACS', '1')]
+     define_macros += [('GPAW_NO_UNDERSCORE_CSCALAPACK', '1')]
+ 

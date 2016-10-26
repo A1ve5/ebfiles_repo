@@ -1,0 +1,50 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-04_14-45-04
+name = 'Boost'
+version = '1.58.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://www.boost.org/'
+description = """Boost provides free peer-reviewed portable C++ source libraries."""
+
+toolchain = {'name': 'foss', 'version': '2016a'}
+toolchainopts = {'pic': True, 'usempi': True}
+
+source_urls = [SOURCEFORGE_SOURCE]
+sources = ['%%(namelower)s_%s.tar.gz' % '_'.join(version.split('.'))]
+
+dependencies = [
+    ('bzip2', '1.0.6'),
+    ('zlib', '1.2.8'),
+    ('Python', '2.7.11'),
+]
+
+# also build boost_mpi
+boost_mpi = True
+
+moduleclass = 'devel'
+
+# Build statistics
+buildstats = [{
+    "build_time": 962.39,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/cvmfs/fgi.csc.fi'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/cvmfs/fgi.csc.fi/software/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/fgci'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", 'BLAST+-2.3.0-foss-2016a-Python-2.7.11.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/cvmfs/fgi.csc.fi/apps/el7/GCCcore/4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --enable-bootstrap --prefix=/cvmfs/fgi.csc.fi/apps/el7/GCCcore/4.9.3 --with-local-prefix=/cvmfs/fgi.csc.fi/apps/el7/GCCcore/4.9.3; Thread model: posix; gcc version 4.9.3 (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 174795993,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/cvmfs/fgi.csc.fi/apps/el7/GCCcore/4.9.3/bin/gcc",
+    "system_python_path": "/cvmfs/fgi.csc.fi/apps/el7/Python/2.7.11-foss-2016a/bin/python",
+    "timestamp": 1475581504,
+    "total_memory": 257676,
+}]

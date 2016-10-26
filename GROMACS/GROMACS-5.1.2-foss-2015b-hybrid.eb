@@ -1,0 +1,66 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-06_15-05-07
+##
+# This file is an EasyBuild reciPY as per https://github.com/hpcugent/easybuild
+#
+# Copyright:: Copyright 2012-2013 University of Luxembourg / LCSB, Cyprus Institute / CaSToRC, Ghent University
+# Authors::   Wiktor Jurkowski <wiktor.jurkowski@uni.lu>, Fotis Georgatos <fotis.georgatos@uni.lu>, \
+#             George Tsouloupas <g.tsouloupas@cyi.ac.cy>, Kenneth Hoste
+# License::   MIT/GPL
+# $Id$
+#
+# This work implements a part of the HPCBIOS project and is a component of the policy:
+# http://hpcbios.readthedocs.org/en/latest/HPCBIOS_2012-93.html
+#
+# Version 5.1.2
+# Author: Adam Huffman
+# The Francis Crick Institute
+##
+
+name = 'GROMACS'
+version = '5.1.2'
+versionsuffix = '-hybrid'
+
+homepage = 'http://www.gromacs.org'
+description = """GROMACS is a versatile package to perform molecular dynamics,
+ i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles."""
+
+toolchain = {'name': 'foss', 'version': '2015b'}
+toolchainopts = {'openmp': True, 'usempi': True}
+
+source_urls = ['ftp://ftp.gromacs.org/pub/gromacs/']
+sources = [SOURCELOWER_TAR_GZ]
+
+builddependencies = [
+    ('CMake', '3.4.1'),
+    ('libxml2', '2.9.2')
+]
+
+dependencies = [('Boost', '1.60.0')]
+
+moduleclass = 'bio'
+
+# Build statistics
+buildstats = [{
+    "build_time": 544.54,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", '--force', "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/scratch/easybuild/build'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/cvmfs/fgi.csc.fi/apps/el7/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/fgci'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", 'GROMACS-5.1.2-foss-2015b-hybrid.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/scratch/easybuild/build/apps/el7/GCC/4.9.3-binutils-2.25/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --enable-bootstrap --prefix=/scratch/easybuild/build/apps/el7/GCC/4.9.3-binutils-2.25 --with-local-prefix=/scratch/easybuild/build/apps/el7/GCC/4.9.3-binutils-2.25; Thread model: posix; gcc version 4.9.3 (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 123959306,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/scratch/easybuild/build/apps/el7/GCC/4.9.3-binutils-2.25/bin/gcc",
+    "system_python_path": "/bin/python",
+    "timestamp": 1475755507,
+    "total_memory": 257676,
+}]

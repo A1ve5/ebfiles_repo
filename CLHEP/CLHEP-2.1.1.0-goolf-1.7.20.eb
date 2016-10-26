@@ -1,0 +1,44 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-04_14-20-18
+easyblock = 'ConfigureMake'
+
+name = 'CLHEP'
+version = '2.1.1.0'
+
+homepage = 'http://proj-clhep.web.cern.ch/proj-clhep/'
+description = """The CLHEP project is intended to be a set of HEP-specific foundation and
+ utility classes such as random generators, physics vectors, geometry and linear algebra.
+ CLHEP is structured in a set of packages independent of any external package."""
+
+toolchain = {'name': 'goolf', 'version': '1.7.20'}
+toolchainopts = {'pic': True}
+
+sources = [SOURCELOWER_TGZ]
+source_urls = ['http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/']
+
+moduleclass = 'numlib'
+
+# Build statistics
+buildstats = [{
+    "build_time": 71.07,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/cvmfs/fgi.csc.fi'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/cvmfs/fgi.csc.fi/software/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/fgci'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", "--try-toolchain='goolf,1.7.20'", 'Geant4-9.5.p01-goolf-1.4.10.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4/libexec/gcc/x86_64-unknown-linux-gnu/4.8.4/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --enable-bootstrap --prefix=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4 --with-local-prefix=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4; Thread model: posix; gcc version 4.8.4 (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 16599434,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4/bin/gcc",
+    "system_python_path": "/bin/python",
+    "timestamp": 1475580018,
+    "total_memory": 257676,
+}]

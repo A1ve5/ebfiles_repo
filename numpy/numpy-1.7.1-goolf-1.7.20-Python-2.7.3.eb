@@ -1,0 +1,53 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-04_14-06-34
+name = 'numpy'
+version = '1.7.1'
+
+homepage = 'http://www.numpy.org'
+description = """NumPy is the fundamental package for scientific computing with Python. It contains among other things:
+a powerful N-dimensional array object, sophisticated (broadcasting) functions, tools for integrating C/C++ and Fortran
+code, useful linear algebra, Fourier transform, and random number capabilities. Besides its obvious scientific uses,
+NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be 
+defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases."""
+
+toolchain = {'name': 'goolf', 'version': '1.7.20'}
+
+source_urls = [('http://sourceforge.net/projects/numpy/files/NumPy/%(version)s', 'download')]
+sources = [SOURCE_TAR_GZ]
+
+patches = ['numpy-%(version)s_distutils_multiple-lib-dirs.patch']
+
+python = 'Python'
+pyver = '2.7.3'
+versionsuffix = '-%s-%s' % (python, pyver)
+
+dependencies = [
+    (python, pyver),
+]
+
+moduleclass = 'math'
+
+# Build statistics
+buildstats = [{
+    "build_time": 89.56,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/cvmfs/fgi.csc.fi'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/cvmfs/fgi.csc.fi/software/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/fgci'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", "--try-toolchain='goolf,1.7.20'", 'scipy-0.13.0-goolf-1.4.10-Python-2.7.3.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4/libexec/gcc/x86_64-unknown-linux-gnu/4.8.4/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --enable-bootstrap --prefix=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4 --with-local-prefix=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4; Thread model: posix; gcc version 4.8.4 (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 19183239,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.4/bin/gcc",
+    "system_python_path": "/cvmfs/fgi.csc.fi/apps/el7/Python/2.7.3-goolf-1.7.20/bin/python",
+    "timestamp": 1475579193,
+    "total_memory": 257676,
+}]

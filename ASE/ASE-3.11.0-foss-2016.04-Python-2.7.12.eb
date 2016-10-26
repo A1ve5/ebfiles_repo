@@ -1,0 +1,52 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-18_21-15-38
+easyblock = 'PythonPackage'
+
+name = 'ASE'
+version = '3.11.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://wiki.fysik.dtu.dk/ase'
+description = """ASE is a python package providing an open source Atomic Simulation Environment
+ in the Python scripting language."""
+
+toolchain = {'name': 'foss', 'version': '2016.04'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = [SOURCELOWER_TAR_GZ]
+
+dependencies = [
+    ('Python', '2.7.12'),
+]
+
+sanity_check_paths = {
+    'files': ['bin/ase-build', 'bin/ase-db', 'bin/ase-gui', 'bin/ase-info', 'bin/ase-run'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages/%(namelower)s'],
+}
+
+moduleclass = 'chem'
+
+# Build statistics
+buildstats = [{
+    "build_time": 5.7,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/cvmfs/fgi.csc.fi'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/home/cscluis/PATH:/scratch/easybuild/ebfiles_repo:/cvmfs/fgi.csc.fi/apps/el7/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--robot-paths='/home/cscluis/PATH:/scratch/easybuild/ebfiles_repo:'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/el7'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", '/scratch/easybuild/ebfiles_repo/GPAW/GPAW-1.0.0-foss-2016.04-Python-2.7.12.eb', '/scratch/easybuild/ebfiles_repo/GPAW/gpaw-1.0.0-foss.patch', '/scratch/easybuild/ebfiles_repo/freetype/freetype-2.6.3-foss-2016b.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/cvmfs/fgi.csc.fi/apps/el7/GCCcore/5.3.0/libexec/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --prefix=/cvmfs/fgi.csc.fi/apps/el7/GCCcore/5.3.0 --with-local-prefix=/cvmfs/fgi.csc.fi/apps/el7/GCCcore/5.3.0 --enable-bootstrap --with-isl=/scratch/easybuild/build/GCCcore/5.3.0/dummy-/gcc-5.3.0/stage2_stuff; Thread model: posix; gcc version 5.3.0 (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 8361048,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/cvmfs/fgi.csc.fi/apps/el7/GCCcore/5.3.0/bin/gcc",
+    "system_python_path": "/cvmfs/fgi.csc.fi/apps/el7/Python/2.7.12-foss-2016.04/bin/python",
+    "timestamp": 1476814538,
+    "total_memory": 257674,
+}]

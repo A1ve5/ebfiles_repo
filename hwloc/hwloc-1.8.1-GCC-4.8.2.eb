@@ -1,0 +1,46 @@
+# Built with EasyBuild version 2.9.0 on 2016-10-05_11-23-56
+easyblock = 'ConfigureMake'
+
+name = 'hwloc'
+version = "1.8.1"
+
+homepage = 'http://www.open-mpi.org/projects/hwloc/'
+description = """The Portable Hardware Locality (hwloc) software package provides a portable abstraction
+ (across OS, versions, architectures, ...) of the hierarchical topology of modern architectures, including
+ NUMA memory nodes, sockets, shared caches, cores and simultaneous multithreading. It also gathers various
+ system attributes such as cache and memory information as well as the locality of I/O devices such as
+ network interfaces, InfiniBand HCAs or GPUs. It primarily aims at helping applications with gathering
+ information about modern computing hardware so as to exploit it accordingly and efficiently."""
+
+toolchain = {'name': 'GCC', 'version': '4.8.2'}
+
+source_urls = ['http://www.open-mpi.org/software/hwloc/v%(version_major_minor)s/downloads/']
+sources = [SOURCE_TAR_GZ]
+
+moduleclass = 'system'
+
+# Build statistics
+buildstats = [{
+    "build_time": 23.89,
+    "command_line": ["--buildpath='/scratch/easybuild/build'", "--configfiles='.easybuild/config.cfg'", "--github-user='\\'A1ve5\\''", "--include-easyblocks='/scratch/easybuild/easyblocks'", "--include-toolchains='/scratch/easybuild/ea_toolchains'", "--installpath='/cvmfs/fgi.csc.fi'", "--modules-tool='Lmod'", "--packagepath='/scratch/easybuild/packages'", "--repositorypath='/scratch/easybuild/ebfiles_repo'", "--robot='/cvmfs/fgi.csc.fi/software/EasyBuild/2.9.0/lib/python2.7/site-packages/easybuild_easyconfigs-2.9.0-py2.7.egg/easybuild/easyconfigs'", "--sourcepath='/scratch/easybuild/sources'", "--subdir-modules='modules/fgci'", "--subdir-software='apps/el7'", "--tmp-logdir='/scratch/easybuild/tmp-logdir'", "--tmpdir='/scratch/easybuild/tmp/'", 'GAMESS-US-20130501-R1-goolf-1.5.14-no-OFED.eb'],
+    "core_count": 24,
+    "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz",
+    "cpu_speed": 3200.0,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "2.9.0",
+    "easybuild-framework_version": "2.9.0",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.2/libexec/gcc/x86_64-unknown-linux-gnu/4.8.2/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --enable-bootstrap --prefix=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.2 --with-local-prefix=/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.2; Thread model: posix; gcc version 4.8.2 (GCC) ; ",
+    "glibc_version": "2.17",
+    "hostname": "io-nfs.int.fgci.csc.fi",
+    "install_size": 3425598,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '6.3.4'),
+    "os_name": "centos linux",
+    "os_type": "Linux",
+    "os_version": "7.2.1511",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.5 (default, Sep 15 2016, 22:37:39) ; [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]",
+    "system_gcc_path": "/cvmfs/fgi.csc.fi/apps/el7/GCC/4.8.2/bin/gcc",
+    "system_python_path": "/bin/python",
+    "timestamp": 1475655836,
+    "total_memory": 257676,
+}]
